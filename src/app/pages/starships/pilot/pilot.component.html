@@ -1,0 +1,21 @@
+<div class="vh-100">
+  <div class="row" *ngIf="pilotDetail !== undefined; else message">
+    <div class="col-12 text-center text-white mt-5 mb-5"><h3>{{pilotDetail?.name}}</h3></div>
+    <div class="col-12 text-white text-center f-20">
+      <p>•Eye color: {{pilotDetail.eye_color}}</p>
+      <p>•Gender: {{pilotDetail.gender}}</p>
+      <p>•height : {{pilotDetail.height}}</p>
+      <p>•Hair color: {{pilotDetail.hair_color}}</p>
+      <p>•Skin color: {{pilotDetail.skin_color}}</p>
+      <p>•Mass: {{pilotDetail.mass}}</p>
+      <p>•Birthday: {{pilotDetail.birth_year}}</p>
+    </div>
+  </div>
+  <ng-template #message>
+    <div class="row">
+      <div class="col-12 text-center text-white mt-5">
+        <h5>Pilot Not found</h5>
+      </div>
+    </div>
+  </ng-template>
+</div>
