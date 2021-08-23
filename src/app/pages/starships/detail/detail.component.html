@@ -1,0 +1,37 @@
+<div class="vh-100">
+  <div class="row" *ngIf="ship !== undefined; else message">
+      <div class="col-12 text-center text-white mt-5 mb-5"><h3>{{ship?.name}}</h3></div>
+      <div class="col-12 text-white text-center f-20">
+          <p>•Model: {{ship.model}}</p>
+          <p>•Cargo capacity: {{ship.cargo_capacity}}</p>
+          <p>•Consumables : {{ship.consumables}}</p>
+          <p>•Price (credits) : {{ship.cost_in_credits}}</p>
+          <p>•Crew: {{ship.crew}}</p>
+          <p>•Hyperdrive rating: {{ship.hyperdrive_rating}}</p>
+          <p>•Manufacturer: {{ship.manufacturer}}</p>
+          <p>•Max atmosphering speed: {{ship.max_atmosphering_speed}}</p>
+      </div>
+      <div class="col-12 text-center text-white mt-4">
+           <h3>Pilots</h3>
+          <div class="row mt-5">
+              <div class="col-12 col-sm-3" *ngFor="let pilot of ship.pilots; let i = index;">
+                  <app-generic-card type="'pilot'" [content]="pilot" [position]="position" [pilot]="i.toString()"></app-generic-card>
+              </div>
+            <ng-container *ngIf="ship.pilots.length === 0">
+              <div class="col-12 text-white text-center">
+                <h4>
+                 This starship has no pilots
+                </h4>
+              </div>
+            </ng-container>
+          </div>
+      </div>
+  </div>
+<ng-template #message>
+    <div class="row">
+       <div class="col-12 text-center text-white mt-5">
+            <h5>No ships found</h5>
+       </div>
+    </div>
+</ng-template>
+</div>
