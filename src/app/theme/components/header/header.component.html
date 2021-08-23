@@ -1,0 +1,13 @@
+<nav class="navbar navbar-dark start-wars-dark">
+  <div class="w-75">
+    <button class="btn btn-secondary btn-sm bg-transparent border-0" *ngIf="showBackButton" (click)="goBack()">
+      <img src="assets/icons/back.svg" alt="" height="20px">
+    </button>
+    <a [routerLink]="'/starships'">
+      <img src="assets/img/death-star.png" alt="" height="40px">
+    </a>
+  </div>
+  <h5 class="text-white">
+    SW - Starships
+  </h5>
+</nav>
